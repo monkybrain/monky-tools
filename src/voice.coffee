@@ -1,6 +1,7 @@
 spawn = require("child_process").spawn
 exec = require("child_process").exec
 tools = require "./tools"
+error = tools.error
 
 class Voice
 
