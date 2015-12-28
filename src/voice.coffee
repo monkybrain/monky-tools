@@ -1,6 +1,15 @@
 spawn = require("child_process").spawn
+exec = require("child_process").exec
+tools = require "./tools"
 
 class Voice
+
+  @list: (pattern) ->
+    grep = if pattern? then " | grep " + pattern else ""
+    command = "say -v ?" + grep
+    console.log command
+    exec command, (err, stdout, stderr) ->
+      console.log stdout
 
   constructor: (voice) ->
     @voice = voice
