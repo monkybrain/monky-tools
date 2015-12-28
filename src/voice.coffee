@@ -12,8 +12,11 @@ class Voice
   @list: (pattern) ->
     Voice.installed()
     grep = if pattern? then " | grep " + pattern else ""
-    result = shell.exec "say -v ?" + grep
-    console.log result
+    command = "say -v ?" + grep
+    result = shell.exec command, silent: true
+    if result.code is 0
+      console.log result.output
+    # console.log result
 
   constructor: (voice) ->
     Voice.installed()
