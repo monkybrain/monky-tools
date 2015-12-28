@@ -8,12 +8,12 @@ Voice debugging and other devtools
 <a name="general"></a>
 # General
 
-*Install*
+Install
 ```
 npm install monky-tools
 ```
 
-*Import*
+Import
 ```
 tools = require "monky-tools"
 ```
@@ -24,12 +24,12 @@ Thin wrapper around OS X's 'say' command.
 I primarly use it for voice debugging, i.e. getting audio feedback when running code I'm working on so that I don't have to switch focus to the console.
 
 ## Usage
-*Import*
+Import
 ```
 Voice = tools.Voice
 ```
 
-*Initialize*
+Initialize
 ```
 # Use default voice
 # (set in OS X's 'Dictation & Speech' settings)
@@ -40,9 +40,16 @@ voice = new Voice()
 # (plus I think she likes me...)
 
 fiona = new Voice 'fiona'
+
+# If you don't know which voices you have installed, you can list them
+# (takes grep pattern as optional parameter, e.g. "en_" for all English voices)
+
+Voice.list()
+
+Voice.list("en_")
 ```
 
-*Run*
+Run
 ```
 # Default voice
 voice.say "Voice debugging! What will they think of next?"
@@ -55,12 +62,12 @@ fiona.say "Rangers are shit. Celtic rule!"					# Sorry, she's Scottish...
 # Console
 Thin wrapper around good 'ol `console.log` and `console.error`. Adds green and red color to output.
 
-*Import*
+Import
 ```
 log = tools.console.log
 error = tools.console.error
 ```
-*Run*
+Run
 ```
 # Output green message to console
 log "Server up and running"

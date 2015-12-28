@@ -19,11 +19,16 @@
     };
 
     Voice.list = function(pattern) {
-      var grep, result;
+      var command, grep, result;
       Voice.installed();
       grep = pattern != null ? " | grep " + pattern : "";
-      result = shell.exec("say -v ?" + grep);
-      return console.log(result);
+      command = "say -v ?" + grep;
+      result = shell.exec(command, {
+        silent: true
+      });
+      if (result.code === 0) {
+        return console.log(result.output);
+      }
     };
 
     function Voice(voice) {

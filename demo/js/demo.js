@@ -12,6 +12,8 @@
 
   fiona = new Voice('fiona');
 
+  Voice.list("en_");
+
   error("Error! No particular error, just testing...");
 
   log("Green looks better than white, right?");
