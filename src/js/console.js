@@ -6,9 +6,16 @@
 
   module.exports = {
     log: function(data) {
+      if (typeof data === 'object') {
+        data = JSON.stringify(data);
+      }
       return console.log(data.green);
     },
     error: function(error) {
+      var data;
+      if (typeof data === 'object') {
+        data = JSON.stringify(data);
+      }
       return console.log(error.red);
     }
   };
