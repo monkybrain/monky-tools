@@ -5,8 +5,9 @@ tools = require "./tools"
 class Voice
 
   @installed: () ->
-    shell.which "say"
-    throw new Error "'say' binary not found..."
+    result = shell.which "say"
+    if not result?
+      throw new Error "'say' binary not found..."
 
   @list: (pattern) ->
     Voice.installed()

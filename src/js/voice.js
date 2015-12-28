@@ -11,8 +11,11 @@
 
   Voice = (function() {
     Voice.installed = function() {
-      shell.which("say");
-      throw new Error("'say' binary not found...");
+      var result;
+      result = shell.which("say");
+      if (result == null) {
+        throw new Error("'say' binary not found...");
+      }
     };
 
     Voice.list = function(pattern) {
