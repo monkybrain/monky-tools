@@ -1,6 +1,6 @@
 {
   "name": "monky-tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Voice debugging and other devtools",
   "main": "src/js/tools.js",
   "scripts": {
