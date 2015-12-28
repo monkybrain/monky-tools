@@ -8,8 +8,7 @@
 
   module.exports = {
     Voice: Voice,
-    log: console.log,
-    error: console.error
+    console: console
   };
 
 }).call(this);

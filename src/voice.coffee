@@ -1,18 +1,21 @@
 spawn = require("child_process").spawn
-exec = require("child_process").exec
+shell = require "shelljs"
 tools = require "./tools"
-error = tools.error
 
 class Voice
 
+  @installed: () ->
+    shell.which "say"
+    throw new Error "'say' binary not found..."
+
   @list: (pattern) ->
+    Voice.installed()
     grep = if pattern? then " | grep " + pattern else ""
-    command = "say -v ?" + grep
-    console.log command
-    exec command, (err, stdout, stderr) ->
-      console.log stdout
+    result = shell.exec "say -v ?" + grep
+    console.log result
 
   constructor: (voice) ->
+    Voice.installed()
     @voice = voice
     @queue = []
     @running = false
