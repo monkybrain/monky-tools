@@ -42,8 +42,9 @@ voice = new Voice()
 fiona = new Voice 'fiona'
 
 # If you don't know which voices you have installed, you can list them.
-# Takes grep pattern as parameter (e.g. "en_" for all English voices or "_UK" for all British voices)
+# (takes grep pattern as optional parameter, e.g. "en_" for all English voices)
 Voice.list()
+Voice.list("en_")
 ```
 
 Run
