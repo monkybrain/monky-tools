@@ -1,17 +1,13 @@
 {
   "name": "monky-tools",
   "version": "0.0.1",
-  "description": "Voice-debugging and other devtools",
+  "description": "Voice debugging and other devtools",
   "main": "src/js/tools.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "say",
-    "debug",
-    "tools",
-    "log",
-    "error"
+    "say", "voice", "debug", "debugging", "tools", "log", "error", "console", "monky"
   ],
   "repository": {
     "type": "git",
