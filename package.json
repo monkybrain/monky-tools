@@ -1,7 +1,7 @@
 {
   "name": "monky-tools",
-  "version": "0.0.3",
-  "description": "Voice debugging and other devtools",
+  "version": "0.0.4",
+  "description": "Voice debugging, node shebanging and other devtools",
   "main": "src/js/tools.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,8 @@
     "error",
     "console",
     "monky",
-    "shebang"
+    "shebang",
+    "node"
   ],
   "bin": {
     "shebang": "src/js/shebang.js"

@@ -1,5 +1,5 @@
 # Import
-tools = require "../../src/js/tools"
+tools = require "../src/js/tools"
 
 # Setup
 log = tools.console.log

@@ -1,12 +1,15 @@
 # monky-tools
-Voice debugging and other devtools
+Voice debugging, node shebanging and other devtools
 
-* [General](#general)
+* [Install](#install)
 * [Voice](#voice)
 * [Console](#console)
+* [Shebang](#shebang)
 
-<a name="general"></a>
-# General
+<a name="install"></a>
+## Install
+
+### Local (voice, console)
 
 Install
 ```
@@ -18,12 +21,19 @@ Import
 tools = require "monky-tools"
 ```
 
+### Global (shebang)
+Install
+```
+npm install -g monky-tools
+```
+
+
 <a name="voice"></a>
-# Voice
+## Voice
 Thin wrapper around OS X's 'say' command.
 I primarly use it for voice debugging, i.e. getting audio feedback when running code I'm working on so that I don't have to switch focus to the console.
 
-## Usage
+### Usage
 Initialize
 ```
 # Use default voice
@@ -54,7 +64,7 @@ fiona.say "Rangers are shit. Celtic rule!"					# Sorry, she's Scottish...
 ```
 
 <a name="console"></a>
-# Console
+## Console
 Thin wrapper around good 'ol `console.log` and `console.error`. Adds green and red color to output.
 
 Import
@@ -70,3 +80,20 @@ log "Server up and running"
 # Output red error message to console
 error "Error: file not found!"
 ```
+
+<a name="shebang"></a>
+## Shebang
+
+Adds the shebang `#! /usr/bin/env node` to a file. I use this command with a filewatcher when developing nodejs apps in CoffeeScript.
+
+```
+shebang <file>
+```
+
+For use with WebStorm (or other JetBrains IDEs), add a FileWatcher with the following settings (run `which shebang` in terminal to get path to executable)
+
+Program: e.g. `/usr/local/bin/shebang`
+
+Arguments: `$FileName$`
+
+Working directory: `$FileDir$`
