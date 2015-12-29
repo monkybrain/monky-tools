@@ -1,16 +1,15 @@
 # Import
 tools = require "../../src/js/tools"
-log = tools.console.log
-error = tools.console.error
 
 # Setup
-Voice = tools.Voice
-fiona = new Voice 'fiona'
+log = tools.console.log
+error = tools.console.error
+fiona = new tools.Voice 'fiona'
 
-# List all English voices
-Voice.list("en_")
-
-# Run
-error "Error! No particular error, just testing..."
-log "Green looks better than white, right?"
-fiona.say "You english bastard"
+# Simulated debugging (50 % success, 50 % error)
+if Math.random() > 0.5
+  log "Success"
+  fiona.say "Success"
+else
+  error "Error!"
+  fiona.say "Error!"

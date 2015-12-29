@@ -1,14 +1,25 @@
+### monky-tools: voice ###
+
 spawn = require("child_process").spawn
 shell = require "shelljs"
 tools = require "./tools"
 
 class Voice
 
+  constructor: (voice) ->
+    Voice.installed()
+    @voice = voice
+    @queue = []
+    @running = false
+    @keys = false
+
+  # Check if installed
   @installed: () ->
     result = shell.which "say"
     if not result?
-      throw new Error "'say' binary not found..."
+      throw new Error "'say' not found..."
 
+  # List installed voices
   @list: (pattern) ->
     Voice.installed()
     grep = if pattern? then " | grep " + pattern else ""
@@ -17,13 +28,6 @@ class Voice
     if result.code is 0
       console.log result.output
     # console.log result
-
-  constructor: (voice) ->
-    Voice.installed()
-    @voice = voice
-    @queue = []
-    @running = false
-    @keys = false
 
   object2phrase: (object) ->
     output = []

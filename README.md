@@ -24,22 +24,17 @@ Thin wrapper around OS X's 'say' command.
 I primarly use it for voice debugging, i.e. getting audio feedback when running code I'm working on so that I don't have to switch focus to the console.
 
 ## Usage
-Import
-```
-Voice = tools.Voice
-```
-
 Initialize
 ```
 # Use default voice
 # (set in OS X's 'Dictation & Speech' settings)
 
-voice = new Voice()
+voice = new tools.Voice()
 
 # Or select another voice. I usually go with Fiona because her voice is nice and clear
 # (plus I think she likes me...)
 
-fiona = new Voice 'fiona'
+fiona = new tools.Voice 'fiona'
 
 # If you don't know which voices you have installed, you can list them
 # (takes grep pattern as optional parameter, e.g. "en_" for all English voices)
